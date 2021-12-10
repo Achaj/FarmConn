@@ -13,7 +13,7 @@ import com.example.farmconn.databinding.ActivityMapsBinding
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener{
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
@@ -41,25 +41,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleApiClient.Co
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-      //  mMap.isMyLocationEnabled();
+        // Sets the map type to be "hybrid"
+        mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+
 
         // Add a marker in Sydney and move the camera
         val baza = LatLng(50.264161, 22.069787)
 
 
         mMap.addMarker(MarkerOptions().position(baza).title("Baza Rolnicza"))
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(baza))
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(baza,15F),500,null)
+
     }
 
-    override fun onConnected(p0: Bundle?) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onConnectionSuspended(p0: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onConnectionFailed(p0: ConnectionResult) {
-        TODO("Not yet implemented")
-    }
 }
