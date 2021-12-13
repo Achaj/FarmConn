@@ -12,54 +12,106 @@
         android:id="@+id/add_machine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADD"
+        android:layout_marginTop="9dp"
+        android:background="#EEB76B"
+        android:text="@string/add"
+        android:textColor="#880E4F"
         app:layout_constraintEnd_toStartOf="@+id/dell_maschine"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="96dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/dell_maschine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:background="#EEB76B"
         android:text="DELL"
+        android:textColor="#880E4F"
         app:layout_constraintEnd_toStartOf="@+id/modify_madhine"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/add_machine"
-        tools:layout_editor_absoluteY="96dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/modify_madhine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:background="#EEB76B"
         android:text="EDIT"
+        android:textColor="#880E4F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/dell_maschine"
-        tools:layout_editor_absoluteY="96dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="303dp"
+        android:layout_width="248dp"
         android:layout_height="48dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="77dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
+        android:textColor="#212121"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toStartOf="@+id/search_machine"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="36dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/search_machine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="O\"
-        tools:layout_editor_absoluteX="316dp"
-        tools:layout_editor_absoluteY="35dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="88dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="29dp"
+
+        android:background="#EEB76B"
+        android:textColor="#880E4F"
+        android:textSize="8sp"
+        app:icon="@drawable/ic_baseline_search_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        style="@android:style/Widget.DeviceDefault.Light.ScrollView"
+        android:layout_width="333dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:scrollbarStyle="outsideInset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="SpeakableTextPresentCheck">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fragmentContainerView2"
+                android:name="com.example.farmconn.AddMaschine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_add_maschine" />
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

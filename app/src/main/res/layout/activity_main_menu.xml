@@ -26,6 +26,8 @@
             android:layout_height="115dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:background="#EEB76B"
+            android:shadowRadius="10"
             android:text="zadania" />
 
         <Button
@@ -34,14 +36,16 @@
             android:layout_height="115dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:background="#EEB76B"
             android:text="mapa" />
 
         <Button
-            android:id="@+id/button14"
+            android:id="@+id/btnMachineActivitiSelect"
             android:layout_width="219dp"
             android:layout_height="115dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:background="#EEB76B"
             android:text="maszyny" />
 
         <Button
@@ -50,6 +54,7 @@
             android:layout_height="115dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
+            android:background="#EEB76B"
             android:text="pola" />
 
     </LinearLayout>
@@ -72,21 +77,24 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_baseline_home_24" />
+            app:srcCompat="@drawable/ic_baseline_home_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/imageButtonLocalization"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_baseline_my_location_24" />
+            app:srcCompat="@drawable/ic_baseline_my_location_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/imageButtonUserDeatils"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+            app:srcCompat="@drawable/ic_baseline_account_circle_24"
+            tools:ignore="SpeakableTextPresentCheck" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
