@@ -15,4 +15,12 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add">ADD</string>
 
+    <string name="list">LIST</string>
+    <string name="search">SEARCH</string>
+    <string name="edit">EDIT</string>
+    <string name="name">Name</string>
+    <string name="fields">FIELDS</string>
+    <string name="works">Works</string>
+
+
 </resources>

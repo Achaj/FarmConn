@@ -54,6 +54,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(baza))
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(baza,15F),500,null)
 
+
+
     }
 
 }
