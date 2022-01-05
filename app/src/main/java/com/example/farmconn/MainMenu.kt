@@ -21,7 +21,7 @@ class MainMenu : AppCompatActivity() {
         }
         val btnMaschineActivity = findViewById<Button>(R.id.btnMachineActivitiy)
         btnMaschineActivity.setOnClickListener{
-            val intent= Intent(this,MachineryMainActivity::class.java)
+            val intent= Intent(this,MaschineActivity::class.java)
             startActivity(intent)
         }
 

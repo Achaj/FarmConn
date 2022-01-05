@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FarmConn">
         <activity
+            android:name=".MaschineActivity"
+            android:exported="false" />
+        <activity
             android:name=".WorksActivity"
             android:exported="false" />
         <activity
