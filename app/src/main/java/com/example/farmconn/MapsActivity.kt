@@ -1,7 +1,11 @@
 package com.example.farmconn
 
+import android.Manifest
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.app.ActivityCompat
+
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -10,13 +14,14 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.farmconn.databinding.ActivityMapsBinding
-import com.google.android.gms.common.ConnectionResult
-import com.google.android.gms.common.api.GoogleApiClient
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
+
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,21 +33,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+
+
+
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
+
+
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         // Sets the map type to be "hybrid"
         mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+
+        //my location
 
 
         // Add a marker in Sydney and move the camera
@@ -51,8 +55,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap.addMarker(MarkerOptions().position(baza).title("Baza Rolnicza"))
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(baza))
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(baza,15F),500,null)
+       mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(baza,15f))
+        //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(baza,15F),500,null)
+
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return
+        }
+        mMap.isMyLocationEnabled=true
 
 
 

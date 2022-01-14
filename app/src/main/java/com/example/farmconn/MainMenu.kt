@@ -30,7 +30,11 @@ class MainMenu : AppCompatActivity() {
             val intent= Intent(this,WorksActivity::class.java)
             startActivity(intent)
         }
-
+        val btnFieldActivity=findViewById<Button>(R.id.btnFieldsActivity)
+        btnFieldActivity.setOnClickListener{
+            val intent= Intent(this,FieldActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

@@ -1,96 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/back2"
-    tools:context=".MaschineActivity">
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="878dp">
+        android:background="@drawable/back2"
+        tools:context=".MaschineActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="877dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFD600"
+            android:gravity="center"
+            android:text="@string/maschine"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFD600"
-                android:gravity="center"
-                android:text="@string/maschine"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button5"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFAB00"
-                    android:text="@string/add"
-                    android:textColor="#000000"
-                    tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
-
-                <Button
-                    android:id="@+id/button6"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_weight="1"
-                    android:background="#FFAB00"
-                    android:text="@string/list"
-                    android:textColor="#3E2723" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/editTextTextPersonName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:autofillHints=""
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:text="Name"
-                    android:textColor="#37474F" />
-
-                <Button
-                    android:id="@+id/searchButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="#AEEA00"
-                    android:text="@string/search" />
-            </LinearLayout>
-
-            <LinearLayout
+            <Button
+                android:id="@+id/button5"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="#8DB1E1A6"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="#FFAB00"
+                android:text="@string/add"
+                android:textColor="#000000"
+                tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+            <Button
+                android:id="@+id/button6"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:background="#FFAB00"
+                android:text="@string/list"
+                android:textColor="#3E2723" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:orientation="horizontal">
+
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:text="Name" />
+
+            <Button
+                android:id="@+id/searchMachine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#64DD17"
+                android:text="@string/search" />
+        </LinearLayout>
+            <LinearLayout
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
                 android:orientation="vertical"
-                android:layout_marginTop="10dp">
+                android:scrollbars="vertical" >
 
                 <TextView
                     android:id="@+id/textView2"
@@ -98,19 +106,16 @@
                     android:layout_height="wrap_content"
                     android:ems="20"
                     android:fontFamily="sans-serif-medium"
-
                     android:text="Marka" />
 
                 <EditText
                     android:id="@+id/editTextBrandMaschine"
-
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:ems="20"
-                    android:hint="Case"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
-                    android:autofillHints="" />
+                    android:text="Case" />
 
                 <TextView
                     android:id="@+id/textView3"
@@ -188,6 +193,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Waga Maszyny (kg)" />
 
+
                 <EditText
                     android:id="@+id/editTextMassMaschine"
                     android:layout_width="match_parent"
@@ -229,8 +235,7 @@
                     android:ems="10"
                     android:hint="10200"
                     android:inputType="textPersonName"
-                    android:minHeight="48dp"
-                    android:autofillHints="" />
+                    android:minHeight="48dp" />
 
                 <TextView
                     android:id="@+id/textView10"
@@ -250,7 +255,7 @@
                     android:minHeight="48dp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/add_maschine"
                     android:layout_width="match_parent"
                     android:layout_height="58dp"
                     android:background="#FFD600"
@@ -259,10 +264,11 @@
                     android:insetRight="10dp"
                     android:insetBottom="10dp"
                     android:text="@string/add" />
+
+
             </LinearLayout>
 
 
-        </LinearLayout>
-    </ScrollView>
-
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
