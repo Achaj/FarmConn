@@ -1,63 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/back2"
-    tools:context=".WorksActivity">
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
+    android:fillViewport="true">
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back2"
+        tools:context=".WorksActivity">
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFD600"
-            android:gravity="center"
-            android:text="@string/works"
-            android:textSize="24sp"
-            android:textStyle="bold" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:id="@+id/linearLayout2"
+            android:layout_width="359dp"
+            android:layout_height="921dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/button5"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#FFAB00"
-                android:text="@string/add"
-                android:textColor="#000000"
-                android:layout_marginRight="10dp"/>
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:background="#FFD600"
+                android:gravity="center"
+                android:text="@string/works"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/button6"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#FFAB00"
-                android:text="@string/list"
-                android:textColor="#3E2723"
-                android:layout_marginLeft="10dp"/>
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button5"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="#FFAB00"
+                    android:text="@string/add"
+                    android:textColor="#000000"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+                <Button
+                    android:id="@+id/button6"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="#FFAB00"
+                    android:text="@string/list"
+                    android:textColor="#3E2723" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:labelFor="@id/searchMachine"
+                    android:minHeight="48dp"
+                    tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />
+
+                <Button
+                    android:id="@+id/searchMachine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="49dp"
+                    android:layout_weight="1"
+                    android:background="#64DD17"
+                    android:text="@string/search"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="#ffffff"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:scrollbars="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Nazwa Pracy" />
+
+                <EditText
+                    android:id="@+id/editTextBrandMaschine"
+                    style="@android:style/Widget.AutoCompleteTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:hint="Orka"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Status Pracy" />
+
+                <Spinner
+                    android:id="@+id/spinnerChoiceStatusWork"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+
+                <Button
+                    android:id="@+id/add_maschine3"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_margin="10dp"
+                    android:background="#9DFF00"
+                    android:insetLeft="10dp"
+                    android:insetTop="10dp"
+                    android:insetRight="10dp"
+                    android:insetBottom="10dp"
+                    android:text="Wybierz maszyny do Pracy" />
+
+                <Button
+                    android:id="@+id/add_field_to_workBTN2"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_margin="10dp"
+                    android:background="#FFD600"
+                    android:insetLeft="10dp"
+                    android:insetTop="10dp"
+                    android:insetRight="10dp"
+                    android:insetBottom="10dp"
+                    android:text="Wybirz Pole" />
+
+                <Button
+                    android:id="@+id/add_user_to_workBTN"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_margin="10dp"
+                    android:background="#9DFF00"
+                    android:insetLeft="10dp"
+                    android:insetTop="10dp"
+                    android:insetRight="10dp"
+                    android:insetBottom="10dp"
+                    android:text="Wybirz Pracownika" />
+
+                <Button
+                    android:id="@+id/add_maschine"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_margin="10dp"
+                    android:background="#FFD600"
+                    android:insetLeft="10dp"
+                    android:insetTop="10dp"
+                    android:insetRight="10dp"
+                    android:insetBottom="10dp"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

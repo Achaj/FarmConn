@@ -1,59 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FieldActivity">
+    android:animateLayoutChanges="true"
+    android:fillViewport="true"
+    android:background="@drawable/back2">
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".FieldActivity">
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFD600"
-            android:gravity="center"
-            android:text="@string/fields"
-            android:textSize="24sp"
-            android:textStyle="bold" />
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
+            android:id="@+id/linearLayout3"
+            android:layout_width="358dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
 
-            <Button
-                android:id="@+id/add_field_activity"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:background="#FFAB00"
-                android:text="@string/add"
-                android:textColor="#000000"
-                tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+                android:background="#FFD600"
+                android:gravity="center"
+                android:text="@string/fields"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/list_field_activity"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:background="#FFAB00"
-                android:text="@string/list"
-                android:textColor="#3E2723" />
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/addFieldActivityActivityFieldsBTN"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="#FFAB00"
+                    android:text="@string/add"
+                    android:textColor="#000000"
+                    tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+                <Button
+                    android:id="@+id/list_field_activity"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="#FFAB00"
+                    android:text="@string/list"
+                    android:textColor="#3E2723" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="601dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/layout_bg"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Nazwa Pola" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Za domem"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:maxLength="35"
+                    android:minHeight="48dp"
+                    app:counterEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:errorEnabled="true"
+                    app:helperText="* Wymagane"
+                    app:helperTextEnabled="true" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Opis Pola"
+                    android:textColor="#616161" />
+
+                <EditText
+                    android:id="@+id/editTextTextMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="138dp"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="Pole wujka romka"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Współrzędne pola"
+                    android:textColor="#616161" />
+
+                <EditText
+                    android:id="@+id/xCordinatsEtitableText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:hint="X"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <EditText
+                    android:id="@+id/yCordinatsEtitableText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:ems="10"
+                    android:hint="Y"
+                    android:importantForAutofill="no"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp" />
+
+                <Button
+                    android:layout_marginTop="30dp"
+                    android:id="@+id/getCurrentLocalizationBTN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pobierz aktualną lokalizacje" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Zapisz" />
+            </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

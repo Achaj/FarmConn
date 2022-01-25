@@ -1,9 +1,12 @@
 package com.example.farmconn
 
 import android.Manifest
+import android.content.ContentValues.TAG
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 
 
@@ -14,13 +17,18 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.example.farmconn.databinding.ActivityMapsBinding
+import com.google.android.gms.maps.model.Marker
+import android.location.Geocoder
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+
+
+
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
-
+    private val geocoder: Geocoder? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,12 +41,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
+         geocoder
 
 
 
     }
-
 
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -55,7 +62,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap.addMarker(MarkerOptions().position(baza).title("Baza Rolnicza"))
 
-       mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(baza,15f))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(baza, 15f))
         //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(baza,15F),500,null)
 
         if (ActivityCompat.checkSelfPermission(
@@ -75,10 +82,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             // for ActivityCompat#requestPermissions for more details.
             return
         }
-        mMap.isMyLocationEnabled=true
+        mMap.isMyLocationEnabled = true
 
+        // add markers
+        mMap.setOnMapLongClickListener(this)
 
 
     }
 
+    override fun onMapLongClick(p0: LatLng) {
+        mMap.addMarker(MarkerOptions().position(p0))
+
+        Log.i("new marker", p0.toString())
+    }
+
+
 }
+
+

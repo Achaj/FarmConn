@@ -16,7 +16,17 @@ class MainActivity : AppCompatActivity() {
                 val intent=Intent(this,MainMenu::class.java)
                 startActivity(intent)
             }
-
+        val singUpBTN= findViewById<Button>(R.id.signInBTN)
+            singUpBTN.setOnClickListener {
+                val intent =Intent(this, CrateNewUserActivity::class.java)
+                startActivity(intent)
+            }
+   //    change password antivity
+   //    val changePassBTN= findViewById<Button>(R.id.changePassActivityBTN)
+   //    changePassBTN.setOnClickListener {
+   //        val intent =Intent(this, ResetPasswordActivity::class.java)
+   //        startActivity(intent)
+   //    }
 
     }
 }

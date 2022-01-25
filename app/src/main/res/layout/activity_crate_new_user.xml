@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back2"
+    tools:context=".CrateNewUserActivity">
+
+
+    <LinearLayout
+        android:layout_width="358dp"
+        android:layout_height="559dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            android:contentDescription="@string/logo"
+            app:srcCompat="@drawable/farmconnlogo"
+            tools:layout_editor_absoluteX="-4dp"
+            tools:layout_editor_absoluteY="93dp"
+            android:layout_marginBottom="15dp"/>
+
+        <EditText
+            android:id="@+id/editTextTextFirstName"
+            style="@android:style/Widget.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:drawableStart="@drawable/ic_baseline_account_box_24"
+            android:layout_marginBottom="15dp"
+            android:focusable="auto"
+            android:hint="@string/imie"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextFirstName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/editTextTextSeconndName"
+            style="@android:style/Widget.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#ffffff"
+            android:drawableStart="@drawable/ic_baseline_account_box_24"
+            android:ems="10"
+            android:focusable="auto"
+            android:hint="@string/nazwisko"
+
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textStyle="bold"
+            android:visibility="visible"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            style="@android:style/Widget.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:background="#ffffff"
+            android:drawableStart="@drawable/custome_email_ico"
+            android:ems="10"
+            android:focusable="auto"
+            android:hint="@string/email"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            style="@android:style/Widget.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:background="#ffffff"
+            android:drawableStart="@drawable/custom_lock_ico"
+            android:ems="10"
+            android:focusable="auto"
+            android:hint="@string/password"
+
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:visibility="visible"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/editTextTextPasswordConfirm"
+            style="@android:style/Widget.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="11dp"
+            android:background="#ffffff"
+            android:drawableStart="@drawable/custom_lock_ico"
+            android:ems="10"
+            android:focusable="auto"
+            android:hint="@string/confirm_pass"
+
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/addNewUserBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_new_user" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
