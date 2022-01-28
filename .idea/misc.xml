@@ -19,11 +19,13 @@
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_field.xml" value="0.30235204855842185" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_field_edit.xml" value="0.25" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_list_fields.xml" value="0.3125948406676783" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_list_machine.xml" value="0.22003034901365706" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_machinery_main.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_main.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_main_menu.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_maps.xml" value="0.28940217391304346" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_maschine.xml" value="0.25" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_maschine_edit.xml" value="0.22458270106221548" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_reset_password.xml" value="0.23482549317147192" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_work.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_works.xml" value="0.33" />
@@ -37,7 +39,10 @@
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/fragment_item_list.xml" value="0.3125948406676783" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/fragment_list_maszchine.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/fragment_second.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/item_work_list.xml" value="0.2090288315629742" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_Machine_item.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_fields_item.xml" value="0.3125948406676783" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_machine_item.xml" value="0.22306525037936267" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/machinery__main_activity.xml" value="0.3515625" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/main_fragment.xml" value="0.365625" />

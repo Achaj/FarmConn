@@ -35,7 +35,7 @@ class ListFieldsActivity : AppCompatActivity() {
 
         // My custom adpter
         if(fieldsArrayList != null) {
-            val myAdapter = MyListAdapter(this, R.layout.list_fields_item, fieldsArrayList)
+            val myAdapter = MyListAdapterField(this, R.layout.list_fields_item, fieldsArrayList)
             listView.adapter = myAdapter
 
 

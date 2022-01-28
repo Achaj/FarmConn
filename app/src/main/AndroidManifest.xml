@@ -18,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FarmConn">
         <activity
+            android:name=".List_Work_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Maschine__Edit__Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ListMachineActivity"
+            android:exported="false" />
+        <activity
             android:name=".FieldEditActivity"
             android:exported="false" />
         <activity

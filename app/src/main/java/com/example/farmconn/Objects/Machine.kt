@@ -1,17 +1,18 @@
 package com.example.farmconn.Objects
 
+import java.io.Serializable
+
 class Machine(
     val idMachine: Int,
-    val brandMachine: String,
-    val modelMachine: String,
-    val typeMachine: String,
-    val capacityMachine: Int,
-    val fuelUsageMachine: Int,
-    val weightMachine: Int,
-    val widthMachine: Int,
-    val xCords:Double,
-    val yCords:Double,
+    var brandMachine: String,
+    var modelMachine: String,
+    var typeMachine: String,
+    var capacityMachine: Int,
+    var fuelUsageMachine: Int,
+    var weightMachine: Int,
+    var widthMachine: Int,
+    var xCords:Double,
+    var yCords:Double,
     val idFarm: Int
 
-) {
-}
+)  : Serializable

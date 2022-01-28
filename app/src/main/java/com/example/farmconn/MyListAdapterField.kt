@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.farmconn.Objects.Fields
 
-class MyListAdapter(var mCtx: Context, var resource:Int, var items:List<Fields>)
+class MyListAdapterField(var mCtx: Context, var resource:Int, var items:List<Fields>)
     : ArrayAdapter<Fields>( mCtx , resource , items ){
 
 

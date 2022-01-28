@@ -9,12 +9,19 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.util.Log
 import com.example.farmconn.Objects.Farm
 import com.example.farmconn.Objects.Fields
+import com.example.farmconn.Objects.Machine
+import com.example.farmconn.Objects.Work
 import com.example.farmconn.Objects.User as User
+
+import java.text.DateFormat
+import java.text.ParseException
+import java.text.SimpleDateFormat
+
 
 class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION){
     companion object{
         //wersja bazy
-        private val DATABASE_VERSION=1
+        private val DATABASE_VERSION=2
         //nazwa bazy
         private val DATABASE_NAME="FarmDataBase"
         //tabela farm
@@ -107,7 +114,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
 
         val CRATE_TABLE_MACHINE=("CREATE TABLE IF NOT EXISTS "+ MASCHINE_Table+" ("
                 + ID_MASCHINE+" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
-                + BRAND_MACHINE+"TEXT NOT NULL,"
+                + BRAND_MACHINE+" TEXT NOT NULL,"
                 + MODEL_MACHINE+" TEXT NOT NULL,"
                 + TYPE_MACHINE+" TEXT NOT NULL,"
                 + CAPACIY_MACHINE+" REAL,"
@@ -206,6 +213,7 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
     //== New Field
     fun addField(field:Fields):Long{
         val db=this.writableDatabase
+
         val contentValues= ContentValues()
         contentValues.put(NAME_FIELD,field.nameField)
         contentValues.put(DSC_FIELD,field.decriptionField)
@@ -216,6 +224,30 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
 
 
         val succes=db.insert(FIELD_Table,null,contentValues)
+        db.close()
+        return succes
+        // succes >-1 its work
+    }
+
+    //== New Machine
+    fun addMachine(machine: Machine):Long{
+        val db=this.writableDatabase
+        val contentValues= ContentValues()
+
+        contentValues.put(BRAND_MACHINE,machine.brandMachine)
+        contentValues.put(MODEL_MACHINE,machine.modelMachine)
+        contentValues.put(TYPE_MACHINE,machine.typeMachine)
+        contentValues.put(CAPACIY_MACHINE,machine.capacityMachine)
+        contentValues.put(FUEL_MACHINE,machine.fuelUsageMachine)
+        contentValues.put(WEIGHT_MACHINE,machine.weightMachine)
+        contentValues.put(WIDTH_MACHINE,machine.widthMachine)
+        contentValues.put(X_MACHINE,machine.xCords)
+        contentValues.put(Y_MACHINE,machine.yCords)
+        contentValues.put(ID_FARM_MACHINE,machine.idFarm)
+
+
+
+        val succes=db.insert(MASCHINE_Table,null,contentValues)
         db.close()
         return succes
         // succes >-1 its work
@@ -257,6 +289,28 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
         return succes
         // succes >-1 its work
     }
+    //
+    //== Update field
+    fun updateMachine(machine: Machine): Int {
+        val db=this.writableDatabase
+        val contentValues= ContentValues()
+        contentValues.put(BRAND_MACHINE,machine.brandMachine)
+        contentValues.put(MODEL_MACHINE,machine.modelMachine)
+        contentValues.put(TYPE_MACHINE,machine.typeMachine)
+        contentValues.put(CAPACIY_MACHINE,machine.capacityMachine)
+        contentValues.put(FUEL_MACHINE,machine.fuelUsageMachine)
+        contentValues.put(WEIGHT_MACHINE,machine.weightMachine)
+        contentValues.put(WIDTH_MACHINE,machine.widthMachine)
+        contentValues.put(X_MACHINE,machine.xCords)
+        contentValues.put(Y_MACHINE,machine.yCords)
+        contentValues.put(ID_FARM_MACHINE,machine.idFarm)
+        // Updating Row
+        val succes=db.update(MASCHINE_Table,contentValues, ID_MASCHINE+" = "+ machine.idMachine,null)
+        //2nd argument is String containing nullColumnHack
+        db.close() //close db
+        return succes
+        // succes >-1 its work
+    }
 
 
     //--method to delete data--//
@@ -287,7 +341,23 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
             ID_FIELD + "=?",
             arrayOf(field.idField.toString()));
         //2nd argument is String containing nullColumnHack
-       // db.close() //close db
+        db.close() //close db
+        return succes
+        // succes >-1 its work
+    }
+    //== dell field
+    fun delateMachine(machine: Machine):Int{
+        val db=this.writableDatabase
+        val contentValues= ContentValues()
+        contentValues.put(ID_MASCHINE,machine.idMachine)
+
+        // Delating Row
+        val succes=  db.delete(
+            MASCHINE_Table,
+            ID_MASCHINE + "=?",
+            arrayOf(machine.idMachine.toString()));
+        //2nd argument is String containing nullColumnHack
+        db.close() //close db
         return succes
         // succes >-1 its work
     }
@@ -367,6 +437,115 @@ class DatabaseHandler(context: Context): SQLiteOpenHelper(context,DATABASE_NAME,
                     val emp=
                         Fields(id,name, desc, x, y,  idFarm)
                     empList.add(emp)
+                } while (cursor.moveToNext())
+            }
+        }
+        cursor.close()
+        db.close()
+        return empList
+    }
+    //== ALL Machine list
+    fun viewMachineList():List<Machine>{
+        val empList:ArrayList<Machine> = ArrayList<Machine>()
+        val selectQuery = "SELECT  * FROM $MASCHINE_Table"
+        val db = this.writableDatabase
+        var cursor: Cursor? = null
+        try{
+            cursor = db.rawQuery(selectQuery, null)
+        }catch (e: SQLiteException) {
+            // db.execSQL(selectQuery)
+            // return ArrayList()
+        }
+
+        var id: Int
+        var brand:String
+        var model:String
+        var type:String
+        var capacty:Int
+        var fuel:Int
+        var weight:Int
+        var width:Int
+        var x: Double
+        var y:Double
+        var idFarm:Int
+        if(cursor!!.count>0){
+            if (cursor.moveToFirst()) {
+                do {
+                    id = cursor.getInt(cursor.getColumnIndexOrThrow(ID_FARM))
+                    brand = cursor.getString(cursor.getColumnIndexOrThrow(BRAND_MACHINE))
+                    model = cursor.getString(cursor.getColumnIndexOrThrow(MODEL_MACHINE))
+                    type = cursor.getString(cursor.getColumnIndexOrThrow(TYPE_MACHINE))
+
+                    capacty = cursor.getInt(cursor.getColumnIndexOrThrow(CAPACIY_MACHINE))
+                    fuel = cursor.getInt(cursor.getColumnIndexOrThrow(FUEL_MACHINE))
+                    weight = cursor.getInt(cursor.getColumnIndexOrThrow(WEIGHT_MACHINE))
+                    width = cursor.getInt(cursor.getColumnIndexOrThrow(WIDTH_MACHINE))
+
+                    x = cursor.getDouble(cursor.getColumnIndexOrThrow(X_MACHINE))
+                    y = cursor.getDouble(cursor.getColumnIndexOrThrow(Y_MACHINE))
+
+                    idFarm = cursor.getInt(cursor.getColumnIndexOrThrow(ID_FARM_MACHINE))
+
+                    val emp= Machine(id,brand,model,type,capacty,fuel,weight,width,x,y,idFarm)
+                    empList.add(emp)
+                } while (cursor.moveToNext())
+            }
+        }
+        cursor.close()
+        db.close()
+        return empList
+    }
+    //== ALL Work list
+    fun viewWorkList():List<Work>{
+        val empList:ArrayList<Work> = ArrayList<Work>()
+        val selectQuery = "SELECT  * FROM $WORK_Table"
+        val db = this.writableDatabase
+        var cursor: Cursor? = null
+        try{
+            cursor = db.rawQuery(selectQuery, null)
+        }catch (e: SQLiteException) {
+            // db.execSQL(selectQuery)
+            // return ArrayList()
+        }
+
+        var id: Int
+        var name:String
+        var status:String
+        var startString:String
+        var stopString:String
+        var idUser:Int
+        var idField:Int
+        var idMachine:Int
+
+
+
+        if(cursor!!.count>0){
+            if (cursor.moveToFirst()) {
+                do {
+                    id = cursor.getInt(cursor.getColumnIndexOrThrow(ID_WORK))
+                    name = cursor.getString(cursor.getColumnIndexOrThrow(NAME_WORK))
+                    status = cursor.getString(cursor.getColumnIndexOrThrow(STATUS_WORK))
+                    startString = cursor.getString(cursor.getColumnIndexOrThrow(START_WORK))
+                    stopString = cursor.getString(cursor.getColumnIndexOrThrow(STOP_WORK))
+                    idUser = cursor.getInt(cursor.getColumnIndexOrThrow(ID_USER_WORK))
+                    idField = cursor.getInt(cursor.getColumnIndexOrThrow(ID_FIELD_WORK))
+                    idMachine = cursor.getInt(cursor.getColumnIndexOrThrow(ID_MACHINE_WORK))
+
+                    var starDate:java.util.Date?=null
+                    var stopDate:java.util.Date?=null
+                    if (startString!=null && startString!=null){
+                        val iso8601Format: DateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                            try {
+                            starDate = iso8601Format.parse(startString)
+                            stopDate = iso8601Format.parse(stopString)
+                                val emp= Work(id,name,status,starDate,stopDate,idUser,idField,idMachine)
+                                empList.add(emp)
+                        } catch (e: ParseException) {
+                            Log.e("EXEPION DATE", "Parsing ISO8601 datetime failed", e)
+                        }
+
+
+                    }
                 } while (cursor.moveToNext())
             }
         }
