@@ -99,7 +99,7 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButtonEditDate_ActivityFieldEdit"
+                android:id="@+id/edit_Button_AFE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -109,7 +109,7 @@
                 app:srcCompat="@drawable/ic_baseline_edit_24" />
 
             <ImageButton
-                android:id="@+id/showLocationFieldBTN_ActivityFieldEdit"
+                android:id="@+id/show_Button_AFE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
@@ -119,7 +119,7 @@
                 tools:ignore="SpeakableTextPresentCheck" />
 
             <ImageButton
-                android:id="@+id/imageButtonDelateDate_ActivityFieldEdi"
+                android:id="@+id/dell_Button_AFE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"

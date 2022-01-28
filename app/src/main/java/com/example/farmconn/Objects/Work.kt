@@ -8,7 +8,7 @@ class Work(
     val statusWork: String,
     val startTime:Time,
     val stopTime: Time,
-    val idFarm: Int,
+    val idUser: Int,
     val idFied:Int,
     val idMachine: Int
 ) {

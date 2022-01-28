@@ -9,4 +9,6 @@ class User(
     val typeUser:String,
     val idFarm:Int
 ) {
+    constructor() : this(0,"","","","","",0)
+
 }

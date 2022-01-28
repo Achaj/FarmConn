@@ -28,7 +28,7 @@
             android:layout_marginBottom="15dp"/>
 
         <EditText
-            android:id="@+id/editTextTextFirstName"
+            android:id="@+id/name_EDITTEXT_CNU"
             style="@android:style/Widget.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
             android:paddingEnd="12dp"
             android:textStyle="bold"
             android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextFirstName"
+            app:layout_constraintBottom_toTopOf="@+id/name_EDITTEXT_CNU"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/editTextTextSeconndName"
+            android:id="@+id/surname_EDITTEXT_CNU"
             style="@android:style/Widget.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/email_EditText_AM"
             style="@android:style/Widget.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
             android:visibility="visible" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/pass_EditText_AM"
             style="@android:style/Widget.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,7 +112,7 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextTextPasswordConfirm"
+            android:id="@+id/passTwo_EDITTEXT_CNU"
             style="@android:style/Widget.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -131,7 +131,7 @@
             android:visibility="visible" />
 
         <Button
-            android:id="@+id/addNewUserBTN"
+            android:id="@+id/addUser_BUTTON_CNU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/add_new_user" />

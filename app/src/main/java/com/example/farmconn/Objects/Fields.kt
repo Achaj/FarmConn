@@ -5,10 +5,10 @@ import java.io.Serializable
 
 class Fields(
     val idField:Int,
-    val nameField: String,
-    val decriptionField: String,
-    val xField:Double,
-    val yField:Double,
+    var nameField: String,
+    var decriptionField: String,
+    var xField:Double,
+    var yField:Double,
     val idFarm:Int
     ) :Serializable
 

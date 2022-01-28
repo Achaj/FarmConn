@@ -7,7 +7,7 @@
     android:background="@drawable/back2">
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/email_EditText_AM"
         style="@android:style/Widget.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -26,13 +26,13 @@
         android:paddingEnd="12dp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/pass_EditText_AM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/pass_EditText_AM"
         style="@android:style/Widget.AutoCompleteTextView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -53,7 +53,7 @@
         app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/email_EditText_AM" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -67,7 +67,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/pass_EditText_AM" />
 
     <Button
         android:id="@+id/signInBTN"
@@ -84,13 +84,21 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="389dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="3dp"
+        android:layout_width="494dp"
+        android:layout_height="127dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/email_EditText_AM"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signInBTN"
         app:srcCompat="@drawable/farmconnlogo" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="imageView4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
