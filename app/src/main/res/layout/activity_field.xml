@@ -146,13 +146,17 @@
                     android:id="@+id/getCurrentLocalizationBTN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pobierz aktualną lokalizacje" />
+                    android:text="Pobierz aktualną lokalizacje"
+                    android:layout_margin="10dp"
+                    android:background="#FFD600"/>
 
                 <Button
                     android:id="@+id/saveFieldInDbBTN"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Zapisz" />
+                    android:text="Zapisz"
+                    android:layout_margin="10dp"
+                    android:background="#FFD600"/>
             </LinearLayout>
 
         </LinearLayout>

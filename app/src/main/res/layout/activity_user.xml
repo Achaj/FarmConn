@@ -190,6 +190,8 @@
                 android:id="@+id/edit_User_AU"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="#FFD600"
                 android:text="Save" />
 
 

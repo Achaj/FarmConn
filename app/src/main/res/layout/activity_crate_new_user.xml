@@ -134,6 +134,8 @@
             android:id="@+id/addUser_BUTTON_CNU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#FFD600"
             android:text="@string/add_new_user" />
     </LinearLayout>
 
