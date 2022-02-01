@@ -15,18 +15,18 @@ class List_Work_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_work)
 
-        val btnbackActivity=findViewById<Button>(R.id.back_Button_ALW)
-        btnbackActivity.setOnClickListener{
-            val intent= Intent(this,WorksActivity::class.java)
+        val btnbackActivity = findViewById<Button>(R.id.back_Button_ALW)
+        btnbackActivity.setOnClickListener {
+            val intent = Intent(this, WorksActivity::class.java)
             startActivity(intent)
         }
 
 
-        var listView =findViewById<ListView>(R.id.machine_ListView_ALW)
-        var workArrayList= getData()
+        var listView = findViewById<ListView>(R.id.machine_ListView_ALW)
+        var workArrayList = getData()
 
         // My custom adpter
-        if(workArrayList != null) {
+        if (workArrayList != null) {
             val myAdapter = MyListAdapterWork(this, R.layout.item_work_list, workArrayList)
             listView.adapter = myAdapter
 
@@ -43,11 +43,11 @@ class List_Work_Activity : AppCompatActivity() {
         }
     }
 
-    fun getData():List<Work>{
-        val dbHandler= DatabaseHandler(this)
-        val helperUser= HelperUser
-        var id= helperUser.getCurrentUser()?.idFarm
-        if(id!=null) {
+    fun getData(): List<Work> {
+        val dbHandler = DatabaseHandler(this)
+        val helperUser = HelperUser
+        var id = helperUser.getCurrentUser()?.idFarm
+        if (id != null) {
             return dbHandler.viewWorkOfOneFarmList(id)
             //return dbHandler.viewFieldsList()
         }
@@ -56,6 +56,6 @@ class List_Work_Activity : AppCompatActivity() {
 
 
     fun clearData(): List<Fields>? {
-        return  null
+        return null
     }
 }

@@ -18,32 +18,31 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.buttonLogin)
         button.setOnClickListener {
-        //    val intent = Intent(this, MainMenu::class.java)
-         //   startActivity(intent)
+            //    val intent = Intent(this, MainMenu::class.java)
+            //   startActivity(intent)
 
             //========Logowanie===============//
-           var email:String
-           email=findViewById<EditText>(R.id.email_EditText_AM).getText().toString()
-           var pass:String
-           pass=findViewById<EditText>(R.id.pass_EditText_AM).getText().toString()
-           pass=md5(pass)
-           val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-           var status=databaseHandler.viewUser(email,pass)
-           if (status != null) {
-               Toast.makeText(applicationContext, "Witaj "+status.nameUser, Toast.LENGTH_LONG).show()
-               var helper= HelperUser.setCurrentUser(status)
-               val intent = Intent(this, MainMenu::class.java)
-               startActivity(intent)
+            var email: String
+            email = findViewById<EditText>(R.id.email_EditText_AM).getText().toString()
+            var pass: String
+            pass = findViewById<EditText>(R.id.pass_EditText_AM).getText().toString()
+            pass = md5(pass)
+            val databaseHandler: DatabaseHandler = DatabaseHandler(this)
+            var status = databaseHandler.viewUser(email, pass)
+            if (status != null) {
+                Toast.makeText(applicationContext, "Witaj " + status.nameUser, Toast.LENGTH_LONG)
+                    .show()
+                var helper = HelperUser.setCurrentUser(status)
+                val intent = Intent(this, MainMenu::class.java)
+                startActivity(intent)
 
-           } else {
-               Toast.makeText(
-                   applicationContext,
-                   "Nieprawidłowe hasło lub login",
-                   Toast.LENGTH_LONG
-               ).show()
-           }
-
-
+            } else {
+                Toast.makeText(
+                    applicationContext,
+                    "Nieprawidłowe hasło lub login",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
 
 
         }
@@ -51,7 +50,6 @@ class MainActivity : AppCompatActivity() {
         singUpBTN.setOnClickListener {
             val intent = Intent(this, CrateNewUserActivity::class.java)
             startActivity(intent)
-
 
 
         }
@@ -62,23 +60,23 @@ class MainActivity : AppCompatActivity() {
         //        startActivity(intent)
         //    }
 
-    //    val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-    //    val status = databaseHandler.addFarm(Farm(0, "PGR", 0.0, 0.0))
-    //    if (status > -1) {
-    //        Toast.makeText(applicationContext, "record save", Toast.LENGTH_LONG).show()
+        //    val databaseHandler: DatabaseHandler = DatabaseHandler(this)
+        //    val status = databaseHandler.addFarm(Farm(0, "PGR", 0.0, 0.0))
+        //    if (status > -1) {
+        //        Toast.makeText(applicationContext, "record save", Toast.LENGTH_LONG).show()
 //
-    //    } else {
-    //        Toast.makeText(
-    //            applicationContext,
-    //            "nie działa",
-    //            Toast.LENGTH_LONG
-    //        ).show()
-    //    }
-
+        //    } else {
+        //        Toast.makeText(
+        //            applicationContext,
+        //            "nie działa",
+        //            Toast.LENGTH_LONG
+        //        ).show()
+        //    }
 
 
     }
-    fun md5(input:String): String {
+
+    fun md5(input: String): String {
         val md = MessageDigest.getInstance("MD5")
         return BigInteger(1, md.digest(input.toByteArray())).toString(16).padStart(32, '0')
     }

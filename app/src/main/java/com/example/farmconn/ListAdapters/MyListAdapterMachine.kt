@@ -9,15 +9,14 @@ import android.widget.TextView
 import com.example.farmconn.Objects.Machine
 import com.example.farmconn.R
 
-class MyListAdapterMachine(var mCtx: Context, var resource:Int,var items:List<Machine>)
-    : ArrayAdapter<Machine>( mCtx , resource , items ){
-
+class MyListAdapterMachine(var mCtx: Context, var resource: Int, var items: List<Machine>) :
+    ArrayAdapter<Machine>(mCtx, resource, items) {
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val layoutInflater : LayoutInflater = LayoutInflater.from(mCtx)
-        val view : View = layoutInflater.inflate(resource , null )
+        val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
+        val view: View = layoutInflater.inflate(resource, null)
 
 
         var typeMachine: TextView = view.findViewById(R.id.typeMachine_TextView_lMi)
@@ -27,18 +26,18 @@ class MyListAdapterMachine(var mCtx: Context, var resource:Int,var items:List<Ma
         var widthMachine: TextView = view.findViewById(R.id.width_TextView_lMi)
 
 
-       var machineList: Machine = items[position]
+        var machineList: Machine = items[position]
 
-        typeMachine.text=machineList.typeMachine
-        brandMachine.text=machineList.brandMachine
-        modelMachine.text=machineList.modelMachine
-        weightMachine.text=machineList.weightMachine.toString()+" kg"
-        widthMachine.text=machineList.widthMachine.toString()+ " cm"
+        typeMachine.text = machineList.typeMachine
+        brandMachine.text = machineList.brandMachine
+        modelMachine.text = machineList.modelMachine
+        weightMachine.text = machineList.weightMachine.toString() + " kg"
+        widthMachine.text = machineList.widthMachine.toString() + " cm"
 
-     //  nameOfField.text= fieldList.nameField
-     //  idOfField.text= fieldList.idField.toString()
-     //  xCordinatsEtitableText.text= fieldList.xField.toString()
-     //  yCordinatsEtitableText.text= fieldList.yField.toString()
+        //  nameOfField.text= fieldList.nameField
+        //  idOfField.text= fieldList.idField.toString()
+        //  xCordinatsEtitableText.text= fieldList.xField.toString()
+        //  yCordinatsEtitableText.text= fieldList.yField.toString()
 
         return view
     }

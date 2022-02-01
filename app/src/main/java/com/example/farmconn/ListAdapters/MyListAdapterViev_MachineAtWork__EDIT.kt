@@ -14,8 +14,11 @@ import com.example.farmconn.Objects.Machine
 import com.example.farmconn.R
 import com.example.farmconn.WorksActivity
 
-class MyListAdapterViev_MachineAtWork__EDIT (var mCtx: Context, var resource:Int, var items:List<Machine>)
-    : ArrayAdapter<Machine>( mCtx , resource , items ) {
+class MyListAdapterViev_MachineAtWork__EDIT(
+    var mCtx: Context,
+    var resource: Int,
+    var items: List<Machine>
+) : ArrayAdapter<Machine>(mCtx, resource, items) {
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -39,12 +42,13 @@ class MyListAdapterViev_MachineAtWork__EDIT (var mCtx: Context, var resource:Int
         weightMachine.text = machineList.weightMachine.toString()
         widthMachine.text = machineList.widthMachine.toString()
 
-        var add= view.findViewById<ImageView>(R.id.addMachine_IMAGE_LWIAW)
+        var add = view.findViewById<ImageView>(R.id.addMachine_IMAGE_LWIAW)
         add.setOnClickListener {
             WorksActivity.remoweMachine(machineList)
-           view.findViewById<LinearLayout>(R.id.linearLayout_LMIAW).setBackgroundColor(Color.parseColor("#DCF5C3"))
+            view.findViewById<LinearLayout>(R.id.linearLayout_LMIAW)
+                .setBackgroundColor(Color.parseColor("#DCF5C3"))
         }
-        var dell=view.findViewById<ImageView>(R.id.remoweMachine_IMAGE_LWIAW)
+        var dell = view.findViewById<ImageView>(R.id.remoweMachine_IMAGE_LWIAW)
         dell.setOnClickListener {
             WorksActivity.addMachine(machineList)
             view.findViewById<LinearLayout>(R.id.linearLayout_LMIAW).setBackgroundColor(Color.RED)

@@ -14,34 +14,33 @@ class List_Work_Field_ADD_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_work_field_add)
 
-        val btnFieldActivity=findViewById<Button>(R.id.back_Button_AWFA)
-        btnFieldActivity.setOnClickListener{
-            val intent= Intent(this,WorksActivity::class.java)
+        val btnFieldActivity = findViewById<Button>(R.id.back_Button_AWFA)
+        btnFieldActivity.setOnClickListener {
+            val intent = Intent(this, WorksActivity::class.java)
             startActivity(intent)
         }
 
 
-
-
-        val listView =findViewById<ListView>(R.id.field_ListView_AWFA)
+        val listView = findViewById<ListView>(R.id.field_ListView_AWFA)
 
         //inicjalize som doata tu use
 
-        var fieldsArrayList= getData()
+        var fieldsArrayList = getData()
 
         // My custom adpter
-        if(fieldsArrayList != null) {
-            val myAdapter = MyListAdapterView_FieldAtWork(this, R.layout.list_fields_at_work, fieldsArrayList)
+        if (fieldsArrayList != null) {
+            val myAdapter =
+                MyListAdapterView_FieldAtWork(this, R.layout.list_fields_at_work, fieldsArrayList)
             listView.adapter = myAdapter
 
         }
     }
 
-    fun getData():List<Fields>{
-        val dbHandler= DatabaseHandler(this)
-        val helperUser= HelperUser
-        var id= helperUser.getCurrentUser()?.idFarm
-        if(id!=null) {
+    fun getData(): List<Fields> {
+        val dbHandler = DatabaseHandler(this)
+        val helperUser = HelperUser
+        var id = helperUser.getCurrentUser()?.idFarm
+        if (id != null) {
             return dbHandler.viewFieldsFarmList(id)
             //return dbHandler.viewFieldsList()
         }
@@ -50,6 +49,6 @@ class List_Work_Field_ADD_activity : AppCompatActivity() {
 
 
     fun clearData(): List<Fields>? {
-        return  null
+        return null
     }
 }

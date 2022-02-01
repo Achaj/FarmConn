@@ -14,31 +14,28 @@ class ListFieldsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_fields)
 
-        val btnFieldActivity=findViewById<Button>(R.id.addFieldActivityActivityListFieldsBTN)
-        btnFieldActivity.setOnClickListener{
-            val intent= Intent(this,FieldActivity::class.java)
+        val btnFieldActivity = findViewById<Button>(R.id.addFieldActivityActivityListFieldsBTN)
+        btnFieldActivity.setOnClickListener {
+            val intent = Intent(this, FieldActivity::class.java)
             startActivity(intent)
         }
 
 
-
-
-        val listView =findViewById<ListView>(R.id.listOfFieldView)
+        val listView = findViewById<ListView>(R.id.listOfFieldView)
 
         //inicjalize som doata tu use
 
-       // fieldsArrayList.add(Fields(0,"Moje","Zenka",50.258541,22.085240,1))
-       // fieldsArrayList.add(Fields(0,"Moje","Marka",2.0,0.0,1))
-       // fieldsArrayList.add(Fields(0,"Moje","Grześka",3.0,0.0,1))
-       // fieldsArrayList.add(Fields(0,"Moje","Maćka",4.0,0.0,1))
+        // fieldsArrayList.add(Fields(0,"Moje","Zenka",50.258541,22.085240,1))
+        // fieldsArrayList.add(Fields(0,"Moje","Marka",2.0,0.0,1))
+        // fieldsArrayList.add(Fields(0,"Moje","Grześka",3.0,0.0,1))
+        // fieldsArrayList.add(Fields(0,"Moje","Maćka",4.0,0.0,1))
 
-        var fieldsArrayList= getData()
+        var fieldsArrayList = getData()
 
         // My custom adpter
-        if(fieldsArrayList != null) {
+        if (fieldsArrayList != null) {
             val myAdapter = MyListAdapterField(this, R.layout.list_fields_item, fieldsArrayList)
             listView.adapter = myAdapter
-
 
 
             // On clik Listinier
@@ -54,11 +51,11 @@ class ListFieldsActivity : AppCompatActivity() {
         }
     }
 
-    fun getData():List<Fields>{
-        val dbHandler= DatabaseHandler(this)
-        val helperUser= HelperUser
-        var id= helperUser.getCurrentUser()?.idFarm
-        if(id!=null) {
+    fun getData(): List<Fields> {
+        val dbHandler = DatabaseHandler(this)
+        val helperUser = HelperUser
+        var id = helperUser.getCurrentUser()?.idFarm
+        if (id != null) {
             return dbHandler.viewFieldsFarmList(id)
             //return dbHandler.viewFieldsList()
         }
@@ -67,7 +64,7 @@ class ListFieldsActivity : AppCompatActivity() {
 
 
     fun clearData(): List<Fields>? {
-        return  null
+        return null
     }
 
 }

@@ -56,7 +56,7 @@ class WorksActivity : AppCompatActivity() {
 
         val btnList_Work_Activity=findViewById<Button>(R.id.listWork_Button_AW)
         btnList_Work_Activity.setOnClickListener{
-            val intent= Intent(this,List_Work_Activity::class.java)
+            val intent = Intent(this, List_Work_Activity::class.java)
             startActivity(intent)
         }
         val btnback=findViewById<Button>(R.id.back_Button_AW)

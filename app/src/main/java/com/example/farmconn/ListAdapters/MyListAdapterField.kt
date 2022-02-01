@@ -9,28 +9,29 @@ import android.widget.TextView
 import com.example.farmconn.Objects.Fields
 import com.example.farmconn.R
 
-class MyListAdapterField(var mCtx: Context, var resource:Int, var items:List<Fields>)
-    : ArrayAdapter<Fields>( mCtx , resource , items ){
-
+class MyListAdapterField(var mCtx: Context, var resource: Int, var items: List<Fields>) :
+    ArrayAdapter<Fields>(mCtx, resource, items) {
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val layoutInflater : LayoutInflater = LayoutInflater.from(mCtx)
-        val view : View = layoutInflater.inflate(resource , null )
+        val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
+        val view: View = layoutInflater.inflate(resource, null)
 
 
         var nameOfField: TextView = view.findViewById(R.id.nameOfField)
         var idOfField: TextView = view.findViewById(R.id.idOfField)
-        var xCordinatsEtitableText: TextView = view.findViewById(R.id.xCordinatsFieldTextViewListFields)!!
-        var yCordinatsEtitableText: TextView = view.findViewById(R.id.yCordinatsFieldTextViewListFields)!!
+        var xCordinatsEtitableText: TextView =
+            view.findViewById(R.id.xCordinatsFieldTextViewListFields)!!
+        var yCordinatsEtitableText: TextView =
+            view.findViewById(R.id.yCordinatsFieldTextViewListFields)!!
 
         var fieldList: Fields = items[position]
 
-        nameOfField.text= fieldList.nameField
-        idOfField.text= fieldList.idField.toString()
-        xCordinatsEtitableText.text= fieldList.xField.toString()
-        yCordinatsEtitableText.text= fieldList.yField.toString()
+        nameOfField.text = fieldList.nameField
+        idOfField.text = fieldList.idField.toString()
+        xCordinatsEtitableText.text = fieldList.xField.toString()
+        yCordinatsEtitableText.text = fieldList.yField.toString()
 
         return view
     }

@@ -31,15 +31,14 @@ class ListMachineActivity : AppCompatActivity() {
             listView.adapter = myAdapter
 
 
-
             // On clik Listinier
             listView.setOnItemClickListener() { adapterView, view, position, id ->
-                 // val itemAtPos = adapterView.getItemAtPosition(position)
-                 // val itemIdAtPos = adapterView.getItemIdAtPosition(position)
-                 // Toast.makeText(this, "Click on item at $itemAtPos its item id $itemIdAtPos", Toast.LENGTH_LONG).show()
+                // val itemAtPos = adapterView.getItemAtPosition(position)
+                // val itemIdAtPos = adapterView.getItemIdAtPosition(position)
+                // Toast.makeText(this, "Click on item at $itemAtPos its item id $itemIdAtPos", Toast.LENGTH_LONG).show()
 
-               val intent = Intent(this, Maschine__Edit__Activity::class.java)
-              intent.putExtra("MACHICHINE", machineArrayList[position])
+                val intent = Intent(this, Maschine__Edit__Activity::class.java)
+                intent.putExtra("MACHICHINE", machineArrayList[position])
                 startActivity(intent)
 
             }

@@ -48,8 +48,12 @@ class MaschineActivity : AppCompatActivity() {
                 var capacit=0
                     try {
                         capacit=capacityString.toInt()
-                    }catch (e : NumberFormatException ){
-                        Toast.makeText(applicationContext, "zostanie wstawione 0", Toast.LENGTH_LONG).show()
+                    } catch (e: NumberFormatException) {
+                        Toast.makeText(
+                            applicationContext,
+                            "zostanie wstawione 0",
+                            Toast.LENGTH_LONG
+                        ).show()
                     }
 
             val fuelString:String

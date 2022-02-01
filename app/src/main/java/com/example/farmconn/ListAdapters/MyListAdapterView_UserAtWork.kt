@@ -11,38 +11,37 @@ import com.example.farmconn.Objects.User
 import com.example.farmconn.R
 import com.example.farmconn.WorksActivity
 
-class MyListAdapterView_UserAtWork(var mCtx: Context, var resource:Int, var items:List<User>)
-    : ArrayAdapter<User>( mCtx , resource , items ){
-
+class MyListAdapterView_UserAtWork(var mCtx: Context, var resource: Int, var items: List<User>) :
+    ArrayAdapter<User>(mCtx, resource, items) {
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val layoutInflater : LayoutInflater = LayoutInflater.from(mCtx)
-        val view : View = layoutInflater.inflate(resource , null )
+        val layoutInflater: LayoutInflater = LayoutInflater.from(mCtx)
+        val view: View = layoutInflater.inflate(resource, null)
 
 
-        var name_EditText_IUAW:TextView= view.findViewById(R.id.name_EditText_IUAW)
-        var surname_EditText_IUAW:TextView= view.findViewById(R.id.surname_EditText_IUAW)
+        var name_EditText_IUAW: TextView = view.findViewById(R.id.name_EditText_IUAW)
+        var surname_EditText_IUAW: TextView = view.findViewById(R.id.surname_EditText_IUAW)
 
-        var user:User= items[position]
+        var user: User = items[position]
 
-        name_EditText_IUAW.text=user.nameUser
-        surname_EditText_IUAW.text=user.secondNameUser
+        name_EditText_IUAW.text = user.nameUser
+        surname_EditText_IUAW.text = user.secondNameUser
 
 
-        var add=view.findViewById<ImageView>(R.id.addUser_ImageView_IUAW)
+        var add = view.findViewById<ImageView>(R.id.addUser_ImageView_IUAW)
         add.setOnClickListener {
             WorksActivity.addUser(user)
-            Toast.makeText(mCtx, "Wybrano "+ user.nameUser, Toast.LENGTH_LONG).show()
-           // view.findViewById<LinearLayout>(R.id.linearLayout_LFAW).setBackgroundColor(Color.parseColor("#DCF5C3"))
+            Toast.makeText(mCtx, "Wybrano " + user.nameUser, Toast.LENGTH_LONG).show()
+            // view.findViewById<LinearLayout>(R.id.linearLayout_LFAW).setBackgroundColor(Color.parseColor("#DCF5C3"))
 
 
         }
-        var dell=view.findViewById<ImageView>(R.id.dellUser_ImageView_IUAW)
+        var dell = view.findViewById<ImageView>(R.id.dellUser_ImageView_IUAW)
         dell.setOnClickListener {
             WorksActivity.remoweUser()
-            Toast.makeText(mCtx, "Odznaczono "+ user.nameUser, Toast.LENGTH_LONG).show()
+            Toast.makeText(mCtx, "Odznaczono " + user.nameUser, Toast.LENGTH_LONG).show()
         }
 
 

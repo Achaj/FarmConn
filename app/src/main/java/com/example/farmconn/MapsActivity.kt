@@ -26,7 +26,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var binding: ActivityMapsBinding
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -37,8 +36,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
-
 
 
     }
@@ -52,39 +49,46 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //my location
 
 
-
         //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(baza,15F),500,null)
 
-        var db=DatabaseHandler(this)
+        var db = DatabaseHandler(this)
         // Add a marker in Sydney and move the camera
         var bazaLongLatLng = LatLng(0.0, 0.0)
-        var tile=""
-        var baza= HelperUser.getCurrentUser()?.let { db.getOneFarmByID(it.idFarm) }
-        if(baza!=null){
-            bazaLongLatLng= LatLng(baza.xCord,baza.yCord)
-            tile=baza.nameFarm
+        var tile = ""
+        var baza = HelperUser.getCurrentUser()?.let { db.getOneFarmByID(it.idFarm) }
+        if (baza != null) {
+            bazaLongLatLng = LatLng(baza.xCord, baza.yCord)
+            tile = baza.nameFarm
 
         }
 
 
-        mMap.addMarker(MarkerOptions().position(bazaLongLatLng).title(tile)
-            .icon(BitmapDescriptorFactory.fromResource(R.drawable.home_house_thiago)))
+        mMap.addMarker(
+            MarkerOptions().position(bazaLongLatLng).title(tile)
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.home_house_thiago))
+        )
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bazaLongLatLng, 15f))
 
-        var machineList= HelperUser.getCurrentUser()?.let { db.viewMachineOnFarmList(it.idFarm) }
-        var listField= HelperUser.getCurrentUser()?.let { db.viewFieldsFarmList(it.idFarm) }
-        if(machineList!=null){
-            for (item in machineList){
-                mMap.addMarker(MarkerOptions().position(LatLng(item.xCords,item.yCords)).title(item.modelMachine)
-                    .snippet(item.typeMachine).icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_vehicle_icon)))
+        var machineList = HelperUser.getCurrentUser()?.let { db.viewMachineOnFarmList(it.idFarm) }
+        var listField = HelperUser.getCurrentUser()?.let { db.viewFieldsFarmList(it.idFarm) }
+        if (machineList != null) {
+            for (item in machineList) {
+                mMap.addMarker(
+                    MarkerOptions().position(LatLng(item.xCords, item.yCords))
+                        .title(item.modelMachine)
+                        .snippet(item.typeMachine)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_vehicle_icon))
+                )
                 Log.d("dodało marker", item.modelMachine)
             }
         }
-        if(listField!=null){
-            for (item in listField){
-                mMap.addMarker(MarkerOptions().position(LatLng(item.xField,item.yField)).title(item.nameField)
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.circle_map_marker_pin_icon)))
-                Log.d("dodało marker", item.nameField )
+        if (listField != null) {
+            for (item in listField) {
+                mMap.addMarker(
+                    MarkerOptions().position(LatLng(item.xField, item.yField)).title(item.nameField)
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.circle_map_marker_pin_icon))
+                )
+                Log.d("dodało marker", item.nameField)
 
             }
         }
@@ -109,14 +113,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.isMyLocationEnabled = true
 
 
-
-
     }
-
-
-
-
-
 
 
 }

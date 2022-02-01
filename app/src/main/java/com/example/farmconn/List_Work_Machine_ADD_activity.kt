@@ -14,35 +14,40 @@ class List_Work_Machine_ADD_activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_work_machine_add)
 
-        val backBTN=findViewById<Button>(R.id.back_Button_ALWMA)
-        backBTN.setOnClickListener{
-            val intent= Intent(this,WorksActivity::class.java)
+        val backBTN = findViewById<Button>(R.id.back_Button_ALWMA)
+        backBTN.setOnClickListener {
+            val intent = Intent(this, WorksActivity::class.java)
             startActivity(intent)
         }
 
-        val listView =findViewById<ListView>(R.id.machine_ListView_ALWMA)
-        var machineArrayList= getData()
+        val listView = findViewById<ListView>(R.id.machine_ListView_ALWMA)
+        var machineArrayList = getData()
 
         // My custom adpter
-        if(machineArrayList != null) {
-            val myAdapter = MyListAdapterViev_MachineAtWork(this, R.layout.list_machine_at_work, machineArrayList)
+        if (machineArrayList != null) {
+            val myAdapter = MyListAdapterViev_MachineAtWork(
+                this,
+                R.layout.list_machine_at_work,
+                machineArrayList
+            )
             listView.adapter = myAdapter
 
-        }else{
+        } else {
             Toast.makeText(this, "BRAK DANYCH DO WYŚWIETLENIA", Toast.LENGTH_LONG).show()
         }
     }
-    fun getData():List<Machine>{
-        val dbHandler= DatabaseHandler(this)
-        val helperUser= HelperUser
-        var id= helperUser.getCurrentUser()?.idFarm
-        if(id!=null) {
+
+    fun getData(): List<Machine> {
+        val dbHandler = DatabaseHandler(this)
+        val helperUser = HelperUser
+        var id = helperUser.getCurrentUser()?.idFarm
+        if (id != null) {
             return dbHandler.viewMachineOnFarmList(id)
         }
         return emptyList()
     }
-    fun clearData(): List<Machine>?
-    {
-        return  null
+
+    fun clearData(): List<Machine>? {
+        return null
     }
 }
