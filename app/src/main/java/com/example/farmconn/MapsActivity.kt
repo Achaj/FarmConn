@@ -14,21 +14,17 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import com.example.farmconn.databinding.ActivityMapsBinding
-import com.google.android.gms.maps.model.Marker
 import android.location.Geocoder
+import com.google.android.gms.maps.model.*
 
 
-
-
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
-    private val geocoder: Geocoder? = null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +37,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-         geocoder
+
 
 
 
@@ -56,14 +52,42 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
         //my location
 
 
-        // Add a marker in Sydney and move the camera
-        val baza = LatLng(50.264161, 22.069787)
 
-
-        mMap.addMarker(MarkerOptions().position(baza).title("Baza Rolnicza"))
-
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(baza, 15f))
         //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(baza,15F),500,null)
+
+        var db=DatabaseHandler(this)
+        // Add a marker in Sydney and move the camera
+        var bazaLongLatLng = LatLng(0.0, 0.0)
+        var tile=""
+        var baza= HelperUser.getCurrentUser()?.let { db.getOneFarmByID(it.idFarm) }
+        if(baza!=null){
+            bazaLongLatLng= LatLng(baza.xCord,baza.yCord)
+            tile=baza.nameFarm
+
+        }
+
+
+        mMap.addMarker(MarkerOptions().position(bazaLongLatLng).title(tile)
+            .icon(BitmapDescriptorFactory.fromResource(R.drawable.home_house_thiago)))
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(bazaLongLatLng, 15f))
+
+        var machineList= HelperUser.getCurrentUser()?.let { db.viewMachineOnFarmList(it.idFarm) }
+        var listField= HelperUser.getCurrentUser()?.let { db.viewFieldsFarmList(it.idFarm) }
+        if(machineList!=null){
+            for (item in machineList){
+                mMap.addMarker(MarkerOptions().position(LatLng(item.xCords,item.yCords)).title(item.modelMachine)
+                    .snippet(item.typeMachine).icon(BitmapDescriptorFactory.fromResource(R.drawable.tractor_vehicle_icon)))
+                Log.d("dodało marker", item.modelMachine)
+            }
+        }
+        if(listField!=null){
+            for (item in listField){
+                mMap.addMarker(MarkerOptions().position(LatLng(item.xField,item.yField)).title(item.nameField)
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.circle_map_marker_pin_icon)))
+                Log.d("dodało marker", item.nameField )
+
+            }
+        }
 
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -84,19 +108,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMapLon
         }
         mMap.isMyLocationEnabled = true
 
-        // add markers
-        mMap.setOnMapLongClickListener(this)
+
 
 
     }
 
-    override fun onMapLongClick(p0: LatLng) {
-        mMap.addMarker(MarkerOptions().position(p0))
 
-        Log.i("new marker", p0.toString())
-    }
+
+
+
 
 
 }
+/*
 
+*/
 

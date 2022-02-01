@@ -1,4 +1,4 @@
-package com.example.farmconn
+package com.example.farmconn.ListAdapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.farmconn.Objects.Fields
+import com.example.farmconn.R
 
 class MyListAdapterField(var mCtx: Context, var resource:Int, var items:List<Fields>)
     : ArrayAdapter<Fields>( mCtx , resource , items ){

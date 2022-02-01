@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
+import com.example.farmconn.ListAdapters.MyListAdapterField
 import com.example.farmconn.Objects.Fields
 
 class ListFieldsActivity : AppCompatActivity() {
@@ -54,16 +55,17 @@ class ListFieldsActivity : AppCompatActivity() {
     }
 
     fun getData():List<Fields>{
-
         val dbHandler= DatabaseHandler(this)
-        var fieldsArrayList= dbHandler.viewFieldsList()
-        if (fieldsArrayList!=null){
-            return fieldsArrayList
-        }else{
-            return emptyList()
+        val helperUser= HelperUser
+        var id= helperUser.getCurrentUser()?.idFarm
+        if(id!=null) {
+            return dbHandler.viewFieldsFarmList(id)
+            //return dbHandler.viewFieldsList()
         }
-
+        return emptyList()
     }
+
+
     fun clearData(): List<Fields>? {
         return  null
     }

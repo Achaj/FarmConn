@@ -1,15 +1,17 @@
 package com.example.farmconn.Objects
 
+import java.io.Serializable
 import java.util.*
 
 class Work(
     val idWork: Int,
-    val nameWork:String,
+    var nameWork:String,
     val statusWork: String,
-    val startTime: Date,
-    val stopTime: Date,
-    val idUser: Int,
-    val idFied:Int,
-    val idMachine: Int
-) {
+    var startTime: String?=null,
+    var stopTime: String?=null,
+    var idUser: Int?=null,
+    var idFied:Int?=null,
+    val idFarm:Int
+):Serializable {
+
 }

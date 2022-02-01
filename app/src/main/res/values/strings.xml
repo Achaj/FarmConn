@@ -28,7 +28,7 @@
     <string-array name="statusWorkArray">
         <item>Wykonano</item>
         <item>Zaplanowano</item>
-        <item>W trakcie</item>
+        <item>Realizacja</item>
         <item>Przerwane</item>
         <item>Anulowano</item>
     </string-array>
@@ -136,4 +136,7 @@
     <string name="zapomia_e_has_a">Zapomiałeś hasła ?</string>
     <string name="zmie_chas_o">Zmień Chasło</string>
     <string name="back">Back</string>
+    <string name="dell">dell</string>
+    <string name="farm">farm</string>
+    <string name="Farm">FARM</string>
 </resources>

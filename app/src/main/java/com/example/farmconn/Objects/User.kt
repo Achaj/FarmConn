@@ -4,12 +4,12 @@ import java.io.Serializable
 
 class User(
     val idUser: Int,
-    val nameUser:String,
-    val secondNameUser:String,
-    val emailUser: String,
-    val passwordUser:String,
+    var nameUser:String,
+    var secondNameUser:String,
+    var emailUser: String,
+    var passwordUser:String,
     val typeUser:String,
-    val idFarm:Int
+    var idFarm:Int
 ) : Serializable {
     constructor() : this(0,"","","","","",0)
 

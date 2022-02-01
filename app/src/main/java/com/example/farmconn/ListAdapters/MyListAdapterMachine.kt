@@ -1,4 +1,4 @@
-package com.example.farmconn
+package com.example.farmconn.ListAdapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.TextView
-import com.example.farmconn.Objects.Fields
 import com.example.farmconn.Objects.Machine
+import com.example.farmconn.R
 
 class MyListAdapterMachine(var mCtx: Context, var resource:Int,var items:List<Machine>)
     : ArrayAdapter<Machine>( mCtx , resource , items ){
@@ -32,8 +32,8 @@ class MyListAdapterMachine(var mCtx: Context, var resource:Int,var items:List<Ma
         typeMachine.text=machineList.typeMachine
         brandMachine.text=machineList.brandMachine
         modelMachine.text=machineList.modelMachine
-        weightMachine.text=machineList.weightMachine.toString()
-        widthMachine.text=machineList.widthMachine.toString()
+        weightMachine.text=machineList.weightMachine.toString()+" kg"
+        widthMachine.text=machineList.widthMachine.toString()+ " cm"
 
      //  nameOfField.text= fieldList.nameField
      //  idOfField.text= fieldList.idField.toString()

@@ -7,6 +7,7 @@
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/custom_lock_ico.xml" value="0.4453125" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/custome_email_ico.xml" value="0.4453125" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/gradient_bacground.xml" value="0.4453125" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/ic_baseline_add_box_24.xml" value="0.32435508345978753" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/ic_baseline_admin_panel_settings_24.xml" value="0.19195751138088013" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/ic_block.xml" value="0.4453125" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/ic_block_focus.xml" value="0.4453125" />
@@ -16,10 +17,14 @@
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/drawable/layout_bg.xml" value="0.27655538694992415" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_crate_new_user.xml" value="0.22" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_create_new_user.xml" value="0.18019726858877086" />
-        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_field.xml" value="0.30235204855842185" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_farm.xml" value="0.21661608497723825" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_field.xml" value="0.25" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_field_edit.xml" value="0.25" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_list_fields.xml" value="0.3125948406676783" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_list_machine.xml" value="0.22003034901365706" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_list_work.xml" value="0.2943854324734446" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_list_work_machine_add.xml" value="0.14871016691957512" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_list_work_user_add.xml" value="0.3125948406676783" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_machinery_main.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_main.xml" value="0.24739583333333334" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_main_menu.xml" value="0.33" />
@@ -27,7 +32,10 @@
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_maschine.xml" value="0.25" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_maschine_edit.xml" value="0.22458270106221548" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_reset_password.xml" value="0.23482549317147192" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_user.xml" value="0.21661608497723825" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_work.xml" value="0.33" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_work_edit.xml" value="0.2" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_work_field_add.xml" value="0.2909711684370258" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/activity_works.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/content_main.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/content_maschine.xml" value="0.2966485507246377" />
@@ -39,9 +47,13 @@
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/fragment_item_list.xml" value="0.3125948406676783" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/fragment_list_maszchine.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/fragment_second.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/item_user_at_work.xml" value="0.14946889226100152" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/item_work_list.xml" value="0.2090288315629742" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_Machine_item.xml" value="0.33" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_farm_items.xml" value="0.33" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_fields_at_work.xml" value="0.30121396054628224" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_fields_item.xml" value="0.3125948406676783" />
+        <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_machine_at_work.xml" value="0.2943854324734446" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/list_machine_item.xml" value="0.22306525037936267" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/login.xml" value="0.33" />
         <entry key="..\:/Users/Jan/AndroidStudioProjects/FarmConn/app/src/main/res/layout/machinery__main_activity.xml" value="0.3515625" />

@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.farmconn.Objects.Fields
+import com.example.farmconn.Objects.User
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
@@ -22,7 +23,7 @@ class FieldActivity : AppCompatActivity() {
 
         val btnFieldActivity=findViewById<Button>(R.id.addFieldActivityActivityFieldsBTN)
         btnFieldActivity.setOnClickListener{
-            val intent= Intent(this, FieldActivity::class.java)
+            val intent= Intent(this, MainMenu::class.java)
             startActivity(intent)
         }
 
@@ -46,17 +47,27 @@ class FieldActivity : AppCompatActivity() {
             y=findViewById<EditText>(R.id.yCordinatsEtitableText).getText().toString().toDouble()
 
             if(name!=null && desc!=null && x!=null && y!=null) {
-                val field = Fields(0, name, desc, x, y, 0)
-                //Toast.makeText(applicationContext,field.toString(),Toast.LENGTH_SHORT).show()
-                val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-                val status = databaseHandler.addField(field)
-                if (status > -1) {
-                    Toast.makeText(applicationContext, "Udało się zapisać dane", Toast.LENGTH_LONG)
-                        .show()
+                val user: User? = HelperUser.getCurrentUser()
+                if(user!= null ) {
+                    val idfarm = user.idFarm
 
-                } else {
-                    Toast.makeText(
-                        applicationContext, "Nie udało się zapisać danych", Toast.LENGTH_LONG).show()
+                    val field = Fields(0, name, desc, x, y, idfarm)
+                    //Toast.makeText(applicationContext,field.toString(),Toast.LENGTH_SHORT).show()
+                    val databaseHandler: DatabaseHandler = DatabaseHandler(this)
+                    val status = databaseHandler.addField(field)
+                    if (status > -1) {
+                        Toast.makeText(
+                            applicationContext,
+                            "Udało się zapisać dane",
+                            Toast.LENGTH_LONG
+                        )
+                            .show()
+
+                    } else {
+                        Toast.makeText(
+                            applicationContext, "Nie udało się zapisać danych", Toast.LENGTH_LONG
+                        ).show()
+                    }
                 }
             }else{
                 Toast.makeText(

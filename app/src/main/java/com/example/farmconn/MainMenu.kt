@@ -16,8 +16,8 @@ class MainMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_menu)
 
-        val imgBtnLocalize = findViewById<ImageButton>(R.id.imageButtonLocalization)
-        imgBtnLocalize.setOnClickListener{
+        val btnMapsActivity = findViewById<Button>(R.id.btnMapsActivity)
+        btnMapsActivity.setOnClickListener{
             val intent= Intent(this,MapsActivity::class.java)
             startActivity(intent)
         }
@@ -37,14 +37,22 @@ class MainMenu : AppCompatActivity() {
             val intent= Intent(this,FieldActivity::class.java)
             startActivity(intent)
         }
+        val userHome=findViewById<ImageButton>(R.id.imageButtonUserDeatils)
+        userHome.setOnClickListener{
+            val intent= Intent(this,UserActivity::class.java)
+            startActivity(intent)
+        }
+        val farmHome=findViewById<ImageButton>(R.id.imageButtonHoeme)
+        farmHome.setOnClickListener{
+            val intent= Intent(this,FarmActivity::class.java)
+            startActivity(intent)
+        }
         var helperUser=HelperUser
         val user=helperUser.getCurrentUser()
-        if (user != null) {
-            Toast.makeText(applicationContext, "Witaj "+user.nameUser.toString(), Toast.LENGTH_LONG).show()
-        }else{
-            // Jak uzytkownik nie jest zalogowny to go usuwa
-           //  val intent= Intent(this,MainActivity::class.java)
-          //  startActivity(intent)
+        if (user == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+             val intent= Intent(this,MainActivity::class.java)
+            startActivity(intent)
         }
 
 

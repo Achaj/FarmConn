@@ -53,7 +53,19 @@ class CrateNewUserActivity : AppCompatActivity() {
                             applicationContext, "Nie udało się zapisać danych", Toast.LENGTH_LONG).show()
                     }
                 }else{
-                    Toast.makeText(applicationContext, okName.toString() + okSurname.toString() + okEmail.toString() +okPass.toString(), Toast.LENGTH_LONG).show()
+                    if(okName!=true){
+                        Toast.makeText(applicationContext, "Twoje imie może się skaładać tylko z liter", Toast.LENGTH_LONG).show()
+                    }
+                    if(okSurname!=true){
+                        Toast.makeText(applicationContext, "Twoje nazwisko może się skaładać tylko z liter", Toast.LENGTH_LONG).show()
+                    }
+                    if(okEmail!=true){
+                        Toast.makeText(applicationContext, "Twój email nie jest w odpowiedmin foramacie xyz@xyx.xyz", Toast.LENGTH_LONG).show()
+                    }
+                    if(okPass!=true){
+                        Toast.makeText(applicationContext, "Hasło musi się składać z liter i cyfr o długości minimu 8 znaków hasła muszą być identyczne", Toast.LENGTH_LONG).show()
+                    }
+
                 }
             }else{
 
@@ -72,7 +84,7 @@ class CrateNewUserActivity : AppCompatActivity() {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
     }
     fun isNamewlValid(it: String): Boolean {
-        val REX_NAME="[a-zA-Z]{3,30}".toRegex()
+        val REX_NAME="[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]{3,30}".toRegex()
         return REX_NAME.matches(it)
     }
 

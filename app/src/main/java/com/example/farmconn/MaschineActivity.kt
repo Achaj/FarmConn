@@ -34,6 +34,7 @@ class MaschineActivity : AppCompatActivity() {
 
 
 
+
         val saveMachine= findViewById<Button>(R.id.addMaschine_Button_AM)
         saveMachine.setOnClickListener{
             val brand:String
@@ -44,44 +45,65 @@ class MaschineActivity : AppCompatActivity() {
             type= findViewById<EditText>(R.id.type_editText_AM).text.toString()
             val capacityString:String
             capacityString= findViewById<EditText>(R.id.capacity_editText_AM).text.toString()
-                var capacit=capacityString.toInt()
+                var capacit=0
+                    try {
+                        capacit=capacityString.toInt()
+                    }catch (e : NumberFormatException ){
+                        Toast.makeText(applicationContext, "zostanie wstawione 0", Toast.LENGTH_LONG).show()
+                    }
+
             val fuelString:String
             fuelString= findViewById<EditText>(R.id.fuel_editText_AM).text.toString()
-                var fuele=fuelString.toInt()
+                var fuele=0
+                    try {
+                        fuele=fuelString.toInt()
+                    }catch (e : NumberFormatException ){
+                        Toast.makeText(applicationContext, " zostanie wstawione 0", Toast.LENGTH_LONG).show()
+                    }
+
             val weightString:String
             weightString= findViewById<EditText>(R.id.weight_editText_AM).text.toString()
-                val weight=weightString.toInt()
+                var weight=0
+                try {
+                    weight=weightString.toInt()
+                }catch (e : NumberFormatException ){
+                    Toast.makeText(applicationContext, "zostanie wstawione 0", Toast.LENGTH_LONG).show()
+                }
+
             val widthString:String
             widthString= findViewById<EditText>(R.id.width_editText_AM).text.toString()
-                val width=widthString.toInt()
+                var width=0
 
-            if(fuele==null){
-                fuele=0
+            try {
+                width=widthString.toInt()
+            }catch (e : NumberFormatException ){
+                Toast.makeText(applicationContext, " zostanie wstawione 0", Toast.LENGTH_LONG).show()
             }
-            if(capacit==null){
-                capacit=0
-            }
+
+
             if (brand!=null && model !=null && type!=null && capacit!=null && fuele!=null && weight!=null && width!=null && x!=null && y!=null){
                // heleper get curent id farm to using in saving date
                 val user: User? = HelperUser.getCurrentUser()
                 if(user!= null ){
                     val idfarm= user.idFarm
-                }
-                var machine=Machine(0,brand,model,type,capacit,fuele,weight,width,x,y,1)
-              //  Toast.makeText(applicationContext,machine.toString(),Toast.LENGTH_SHORT).show()
 
-                val databaseHandler: DatabaseHandler = DatabaseHandler(this)
-                val status = databaseHandler.addMachine(machine)
-                if (status > -1) {
-                    Toast.makeText(applicationContext, "Udało się zapisać dane", Toast.LENGTH_LONG).show()
-                    clearEditText()
-                    x=0.0
-                    y=0.0
+                    var machine=Machine(0,brand,model,type,capacit,fuele,weight,width,x,y,idfarm)
+                    //  Toast.makeText(applicationContext,machine.toString(),Toast.LENGTH_SHORT).show()
 
-                } else {
-                    Toast.makeText(
-                        applicationContext, "Nie udało się zapisać danych", Toast.LENGTH_LONG).show()
+                    val databaseHandler: DatabaseHandler = DatabaseHandler(this)
+                    val status = databaseHandler.addMachine(machine)
+                    if (status > -1) {
+                        Toast.makeText(applicationContext, "Udało się zapisać dane", Toast.LENGTH_LONG).show()
+                        clearEditText()
+                        x=0.0
+                        y=0.0
+
+                    } else {
+                        Toast.makeText(
+                            applicationContext, "Nie udało się zapisać danych", Toast.LENGTH_LONG).show()
+                    }
                 }
+
             }else{
                 Toast.makeText(
                     applicationContext, "Nie Uzpełnionow szystkich danych", Toast.LENGTH_LONG).show()

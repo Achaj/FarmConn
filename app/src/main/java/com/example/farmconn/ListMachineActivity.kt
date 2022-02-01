@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
-import com.example.farmconn.Objects.Fields
+import com.example.farmconn.ListAdapters.MyListAdapterMachine
 import com.example.farmconn.Objects.Machine
 
 class ListMachineActivity : AppCompatActivity() {
@@ -21,11 +21,7 @@ class ListMachineActivity : AppCompatActivity() {
             val intent= Intent(this, MainMenu::class.java)
             startActivity(intent)
         }
-        val refreshBTN=findViewById<Button>(R.id.refresh_Button_ALM)
-        refreshBTN.setOnClickListener{
-            val intent= Intent(this, ListMachineActivity::class.java)
-            startActivity(intent)
-        }
+
 
         var machineArrayList= getData()
 
@@ -54,13 +50,12 @@ class ListMachineActivity : AppCompatActivity() {
     }
     fun getData():List<Machine>{
         val dbHandler= DatabaseHandler(this)
-        var machineArrayList= dbHandler.viewMachineList()
-        if (machineArrayList!=null){
-            return machineArrayList
-        }else{
-            return emptyList()
+        val helperUser= HelperUser
+        var id= helperUser.getCurrentUser()?.idFarm
+        if(id!=null) {
+            return dbHandler.viewMachineOnFarmList(id)
         }
-
+        return emptyList()
     }
     fun clearData(): List<Machine>?
     {
