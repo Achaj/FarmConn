@@ -76,17 +76,20 @@ class UserActivity : AppCompatActivity() {
                 var okSurname: Boolean
                 var okEmail: Boolean
                 var okPass: Boolean
-                if (name != "null" && surname != "null" && email != "null" && pass != "null" && passConfirm != "null") {
+                if (name != null && surname != null && email != null ) {
                     okName = isNamewlValid(name)
                     okSurname = isNamewlValid(name)
                     okEmail = isEmailValid(email)
                     okPass = isPassEquales(pass, passConfirm)
-                    if (!oldUser.passwordUser.equals(md5(pass)) && okPass == true) {
-                        oldUser.passwordUser = md5(pass)
-                    }
-                    if (okName == true && okSurname == true && okEmail == true) {
 
+                    if (okName == true && okSurname == true && okEmail == true && okPass==true ) {
 
+                        if (!oldUser.passwordUser.equals(md5(pass)) &&  isPassworlValid(pass) && pass.length > 7 && passConfirm.length>7) {
+                            oldUser.passwordUser = md5(pass)
+                           Log.d("Pass","zsotało nowe hasło")
+                        }else{
+                            Log.d("Pass","zsotało stare hasło")
+                        }
                         val status = databaseHandler.updateUser(oldUser)
                         if (status > -1) {
                             Toast.makeText(
@@ -104,15 +107,7 @@ class UserActivity : AppCompatActivity() {
                                 Toast.LENGTH_LONG
                             ).show()
                         }
-                    } else {
-                        Toast.makeText(
-                            applicationContext,
-                            okName.toString() + okSurname.toString() + okEmail.toString() + okPass.toString(),
-                            Toast.LENGTH_LONG
-                        ).show()
                     }
-                } else {
-
                 }
             }
         }
@@ -140,12 +135,20 @@ class UserActivity : AppCompatActivity() {
     // Validation data hear
 
     fun isEmailValid(email: String): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        var x=android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        if(!x){
+            Toast.makeText(applicationContext, "Nie poprawny format danych ", Toast.LENGTH_LONG).show()
+        }
+        return x
     }
 
     fun isNamewlValid(it: String): Boolean {
         val REX_NAME = "[A-Za-zżźćńółęąśŻŹĆĄŚĘŁÓŃ]{3,30}".toRegex()
-        return REX_NAME.matches(it)
+        var x= REX_NAME.matches(it)
+        if(!x){
+            Toast.makeText(applicationContext, "Użyto nie dozwolonych znaków ", Toast.LENGTH_LONG).show()
+        }
+        return x
     }
 
     // Retur treue is paswword is ok
@@ -159,6 +162,8 @@ class UserActivity : AppCompatActivity() {
             if (isPassworlValid(p1)) {
                 if (!p1.equals(p2)) {
                     return false;
+                    Toast.makeText(applicationContext, "Hasła nie są takike same ", Toast.LENGTH_LONG).show()
+
                     Log.d("przeszło", "nie")
                 } else {
                     Log.d("przeszło", "tak")
@@ -166,10 +171,13 @@ class UserActivity : AppCompatActivity() {
 
                 }
             } else {
+                Toast.makeText(applicationContext, "Hasła nie spełnia warubków", Toast.LENGTH_LONG).show()
                 return false
-                //   Toast.makeText(applicationContext, "Minimum osiem znaków,a-z A-Z 0-9 ", Toast.LENGTH_LONG).show()
+
             }
         } else {
+            Toast.makeText(applicationContext, "Pola są puste ", Toast.LENGTH_LONG).show()
+
             return false
 
         }
