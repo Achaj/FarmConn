@@ -13,7 +13,11 @@ class List_Work_Machine_ADD_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_work_machine_add)
-
+        if (HelperUser.getCurrentUser() == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         val backBTN = findViewById<Button>(R.id.back_Button_ALWMA)
         backBTN.setOnClickListener {
             val intent = Intent(this, WorksActivity::class.java)

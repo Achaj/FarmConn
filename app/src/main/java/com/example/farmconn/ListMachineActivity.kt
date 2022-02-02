@@ -13,20 +13,24 @@ class ListMachineActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_machine)
+        if (HelperUser.getCurrentUser() == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+        val listView = findViewById<ListView>(R.id.machine_ListView_ALM)
 
-        val listView =findViewById<ListView>(R.id.machine_ListView_ALM)
-
-        val backBTN=findViewById<Button>(R.id.back_Button_ALM)
-        backBTN.setOnClickListener{
-            val intent= Intent(this, MainMenu::class.java)
+        val backBTN = findViewById<Button>(R.id.back_Button_ALM)
+        backBTN.setOnClickListener {
+            val intent = Intent(this, MainMenu::class.java)
             startActivity(intent)
         }
 
 
-        var machineArrayList= getData()
+        var machineArrayList = getData()
 
         // My custom adpter
-        if(machineArrayList != null) {
+        if (machineArrayList != null) {
             val myAdapter = MyListAdapterMachine(this, R.layout.list_machine_item, machineArrayList)
             listView.adapter = myAdapter
 
@@ -42,22 +46,23 @@ class ListMachineActivity : AppCompatActivity() {
                 startActivity(intent)
 
             }
-        }else{
+        } else {
             Toast.makeText(this, "BRAK DANYCH DO WYŚWIETLENIA", Toast.LENGTH_LONG).show()
         }
 
     }
-    fun getData():List<Machine>{
-        val dbHandler= DatabaseHandler(this)
-        val helperUser= HelperUser
-        var id= helperUser.getCurrentUser()?.idFarm
-        if(id!=null) {
+
+    fun getData(): List<Machine> {
+        val dbHandler = DatabaseHandler(this)
+        val helperUser = HelperUser
+        var id = helperUser.getCurrentUser()?.idFarm
+        if (id != null) {
             return dbHandler.viewMachineOnFarmList(id)
         }
         return emptyList()
     }
-    fun clearData(): List<Machine>?
-    {
-        return  null
+
+    fun clearData(): List<Machine>? {
+        return null
     }
 }

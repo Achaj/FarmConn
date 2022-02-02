@@ -26,16 +26,16 @@
             android:layout_weight="1"
             android:text="TextView" />
 
-            <ImageView
-                android:id="@+id/addUser_ImageView_IUAW"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_baseline_add_box_24" />
+        <ImageView
+            android:id="@+id/addUser_ImageView_IUAW"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_baseline_add_box_24" />
 
-            <ImageView
-                android:id="@+id/dellUser_ImageView_IUAW"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/ic_baseline_remove_24" />
+        <ImageView
+            android:id="@+id/dellUser_ImageView_IUAW"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_baseline_remove_24" />
     </LinearLayout>
 </RelativeLayout>

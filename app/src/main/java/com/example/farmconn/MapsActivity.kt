@@ -2,6 +2,7 @@ package com.example.farmconn
 
 import android.Manifest
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,7 +29,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        if (HelperUser.getCurrentUser() == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

@@ -18,6 +18,13 @@ class UserActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
+        var helperUser = HelperUser
+        val user = helperUser.getCurrentUser()
+        if (user == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         val back_Button_AU = findViewById<Button>(R.id.back_Button_AU)
         back_Button_AU.setOnClickListener {

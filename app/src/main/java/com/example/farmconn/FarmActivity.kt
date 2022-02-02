@@ -44,6 +44,11 @@ class FarmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_farm)
+        if (HelperUser.getCurrentUser() == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         var fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         var tmpFarm: Farm? = null
 

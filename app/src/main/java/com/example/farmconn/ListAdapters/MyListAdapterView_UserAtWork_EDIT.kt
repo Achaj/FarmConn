@@ -36,9 +36,11 @@ class MyListAdapterView_UserAtWork_EDIT(
 
         var add = view.findViewById<ImageView>(R.id.addUser_ImageView_IUAW)
         add.setOnClickListener {
-            WorksActivity.remoweUser()
-            view.findViewById<LinearLayout>(R.id.linearLayout_LFAW)
-                .setBackgroundColor(Color.parseColor("#DCF5C3"))
+            if (WorksActivity.user != null) {
+                WorksActivity.user = null
+                view.findViewById<LinearLayout>(R.id.linearLayout_IUAW)
+                    .setBackgroundColor(Color.parseColor("#DCF5C3"))
+            }
 
 
         }

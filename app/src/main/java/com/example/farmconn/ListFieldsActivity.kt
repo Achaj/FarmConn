@@ -13,7 +13,11 @@ class ListFieldsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_fields)
-
+        if (HelperUser.getCurrentUser() == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         val btnFieldActivity = findViewById<Button>(R.id.addFieldActivityActivityListFieldsBTN)
         btnFieldActivity.setOnClickListener {
             val intent = Intent(this, FieldActivity::class.java)

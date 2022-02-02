@@ -15,14 +15,13 @@
 
         <LinearLayout
             android:id="@+id/linearLayout3"
-            android:layout_width="358dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            >
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/textView11"
@@ -148,7 +147,7 @@
                     android:layout_height="wrap_content"
                     android:text="Pobierz aktualną lokalizacje"
                     android:layout_margin="10dp"
-                    android:background="#FFD600"/>
+                    android:background="#FFD600" />
 
                 <Button
                     android:id="@+id/saveFieldInDbBTN"
@@ -156,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:text="Zapisz"
                     android:layout_margin="10dp"
-                    android:background="#FFD600"/>
+                    android:background="#FFD600" />
             </LinearLayout>
 
         </LinearLayout>

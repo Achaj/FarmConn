@@ -131,9 +131,10 @@ class Work_Edit_Activity : AppCompatActivity() {
                 workOLD.nameWork = name
             }
             if (!workOLD.statusWork.equals(spinner.selectedItem.toString())) {
-
+                workOLD.statusWork = spinner.selectedItem.toString()
                 val current = LocalDateTime.now()
                 val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+
                 if (spinner.selectedItem.toString().equals("Wykonano")) {
                     workOLD.stopTime = current.format(formatter)
                 }

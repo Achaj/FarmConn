@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -15,233 +14,234 @@
         tools:context=".MaschineActivity">
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="877dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FFD600"
-            android:gravity="center"
-            android:text="@string/maschine"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/back_Button_AM"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="1"
-                android:background="#FFAB00"
-                android:text="@string/back"
-                android:textColor="#000000"
-                tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
-
-            <Button
-                android:id="@+id/listMaschine_Button_AM"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1"
-                android:background="#FFAB00"
-                android:text="@string/list"
-                android:textColor="#3E2723" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="758dp"
-            android:layout_margin="10dp"
-            android:animateLayoutChanges="true"
-            android:background="@drawable/layout_bg"
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="877dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
             android:orientation="vertical"
-            android:padding="10dp"
-            android:scrollbars="vertical">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textView11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:ems="20"
-                android:fontFamily="sans-serif-medium"
-                android:text="Marka" />
-
-            <EditText
-                android:id="@+id/brand_editText_AM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:hint="Case"
-                android:importantForAutofill="no" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="20"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Model" />
-
-            <EditText
-                android:id="@+id/model_editText_AM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Maxxum 125"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:importantForAutofill="no" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="20"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Typ Maszyny" />
-
-            <EditText
-                android:id="@+id/type_editText_AM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Ciągnik"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:importantForAutofill="no" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="20"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Pojemność Zbiornika (l)" />
-
-            <EditText
-                android:id="@+id/capacity_editText_AM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:layout_marginTop="10dp"
-                android:hint="320"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:importantForAutofill="no" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="20"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Spalanie na godzine (l/h)" />
-
-            <EditText
-                android:id="@+id/fuel_editText_AM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="20"
-                android:hint="14"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:importantForAutofill="no" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="20"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Waga Maszyny (kg)" />
-
-
-            <EditText
-                android:id="@+id/weight_editText_AM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-
-                android:hint="5250"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:importantForAutofill="no" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="20"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Szerokość Maszyny (cm)" />
-
-            <EditText
-                android:id="@+id/width_editText_AM"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="280"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:importantForAutofill="no" />
-            <Button
-                android:id="@+id/getLocalize_Butto_AM"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_margin="10dp"
                 android:background="#FFD600"
-                android:insetLeft="10dp"
-                android:insetTop="10dp"
-                android:insetRight="10dp"
-                android:insetBottom="10dp"
-                android:text="Pobierz Lokalizacje" />
+                android:gravity="center"
+                android:text="@string/maschine"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
-
-            <Button
-                android:id="@+id/addMaschine_Button_AM"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/back_Button_AM"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:background="#FFAB00"
+                    android:text="@string/back"
+                    android:textColor="#000000"
+                    tools:ignore="DuplicateSpeakableTextCheck,DuplicateSpeakableTextCheck" />
+
+                <Button
+                    android:id="@+id/listMaschine_Button_AM"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="#FFAB00"
+                    android:text="@string/list"
+                    android:textColor="#3E2723" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="758dp"
                 android:layout_margin="10dp"
-                android:background="#FFD600"
-                android:insetLeft="10dp"
-                android:insetTop="10dp"
-                android:insetRight="10dp"
-                android:insetBottom="10dp"
-                android:text="@string/add" />
+                android:animateLayoutChanges="true"
+                android:background="@drawable/layout_bg"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:scrollbars="vertical">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ems="20"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Marka" />
+
+                <EditText
+                    android:id="@+id/brand_editText_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:hint="Case"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Model" />
+
+                <EditText
+                    android:id="@+id/model_editText_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Maxxum 125"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Typ Maszyny" />
+
+                <EditText
+                    android:id="@+id/type_editText_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Ciągnik"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Pojemność Zbiornika (l)" />
+
+                <EditText
+                    android:id="@+id/capacity_editText_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:layout_marginTop="10dp"
+                    android:hint="320"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Spalanie na godzine (l/h)" />
+
+                <EditText
+                    android:id="@+id/fuel_editText_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:hint="14"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Waga Maszyny (kg)" />
+
+
+                <EditText
+                    android:id="@+id/weight_editText_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+
+                    android:hint="5250"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:importantForAutofill="no" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="20"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Szerokość Maszyny (cm)" />
+
+                <EditText
+                    android:id="@+id/width_editText_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="280"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    android:importantForAutofill="no" />
+
+                <Button
+                    android:id="@+id/getLocalize_Butto_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_margin="10dp"
+                    android:background="#FFD600"
+                    android:insetLeft="10dp"
+                    android:insetTop="10dp"
+                    android:insetRight="10dp"
+                    android:insetBottom="10dp"
+                    android:text="Pobierz Lokalizacje" />
+
+
+                <Button
+                    android:id="@+id/addMaschine_Button_AM"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_margin="10dp"
+                    android:background="#FFD600"
+                    android:insetLeft="10dp"
+                    android:insetTop="10dp"
+                    android:insetRight="10dp"
+                    android:insetBottom="10dp"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
-
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

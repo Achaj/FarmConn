@@ -20,7 +20,11 @@ class FieldActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_field)
-
+        if (HelperUser.getCurrentUser() == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         val btnFieldActivity = findViewById<Button>(R.id.addFieldActivityActivityFieldsBTN)
         btnFieldActivity.setOnClickListener {
             val intent = Intent(this, MainMenu::class.java)

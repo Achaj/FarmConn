@@ -13,7 +13,11 @@ class List_Work_Field_ADD_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_work_field_add)
-
+        if (HelperUser.getCurrentUser() == null) {
+            //Jak uzytkownik nie jest zalogowny to go usuwa
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         val btnFieldActivity = findViewById<Button>(R.id.back_Button_AWFA)
         btnFieldActivity.setOnClickListener {
             val intent = Intent(this, WorksActivity::class.java)

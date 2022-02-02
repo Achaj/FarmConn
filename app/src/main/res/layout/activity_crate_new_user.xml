@@ -9,10 +9,11 @@
 
 
     <LinearLayout
-        android:layout_width="358dp"
-        android:layout_height="559dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -25,7 +26,7 @@
             app:srcCompat="@drawable/farmconnlogo"
             tools:layout_editor_absoluteX="-4dp"
             tools:layout_editor_absoluteY="93dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="15dp" />
 
         <EditText
             android:id="@+id/name_EDITTEXT_CNU"

@@ -11,8 +11,8 @@ class Machine(
     var fuelUsageMachine: Int,
     var weightMachine: Int,
     var widthMachine: Int,
-    var xCords:Double,
-    var yCords:Double,
+    var xCords: Double,
+    var yCords: Double,
     val idFarm: Int
 
-)  : Serializable
+) : Serializable

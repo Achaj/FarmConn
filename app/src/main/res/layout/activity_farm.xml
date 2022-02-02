@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,6 +22,7 @@
             android:text="@string/Farm"
             android:textSize="24sp"
             android:textStyle="bold" />
+
         <Button
             android:id="@+id/back_Button_AF"
             android:layout_width="match_parent"
@@ -28,6 +30,7 @@
             android:layout_margin="10dp"
             android:background="#FFD600"
             android:text="Back" />
+
         <LinearLayout
             android:layout_margin="15dp"
             android:padding="20dp"
@@ -80,6 +83,7 @@
                 android:layout_margin="10dp"
                 android:background="#FFD600"
                 android:text="Get current localization" />
+
             <Button
                 android:id="@+id/newFarmOnUser_Button_AF"
                 android:layout_width="match_parent"
@@ -87,6 +91,7 @@
                 android:layout_margin="10dp"
                 android:background="#FFD600"
                 android:text="Set YOUR Farm" />
+
             <Button
                 android:id="@+id/newFarm_Button_AF"
                 android:layout_width="match_parent"
