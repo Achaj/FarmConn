@@ -23,7 +23,9 @@ class UserActivity : AppCompatActivity() {
         if (user == null) {
             //Jak uzytkownik nie jest zalogowny to go usuwa
             val intent = Intent(this, MainActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent)
+            this.finishAndRemoveTask();
         }
 
         val back_Button_AU = findViewById<Button>(R.id.back_Button_AU)
@@ -37,7 +39,9 @@ class UserActivity : AppCompatActivity() {
         logOut.setOnClickListener {
             HelperUser.setCurrentUserNull()
             val intent = Intent(this, MainActivity::class.java)
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent)
+            finishAndRemoveTask();
         }
 
         if (oldUser != null) {
