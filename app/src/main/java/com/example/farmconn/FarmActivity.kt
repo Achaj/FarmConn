@@ -44,6 +44,7 @@ class FarmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_farm)
+
         if (HelperUser.getCurrentUser() == null) {
             //Jak uzytkownik nie jest zalogowny to go usuwa
             val intent = Intent(this, MainActivity::class.java)
@@ -52,11 +53,11 @@ class FarmActivity : AppCompatActivity() {
         var fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         var tmpFarm: Farm? = null
 
-        tmpFarm = helperUser.getCurrentUser()?.let { dbHandler.getOneFarmByID(it?.idFarm) }
-        if (tmpFarm != null && farm == null) {
-            putData(tmpFarm)
-            farm = tmpFarm
-        }
+      // tmpFarm = helperUser.getCurrentUser()?.let { dbHandler.getOneFarmByID(it?.idFarm) }
+      // if (tmpFarm != null && farm == null) {
+      //     putData(tmpFarm)
+      //     farm = tmpFarm
+      // }
         val listView = findViewById<ListView>(R.id.farm_LISTVIEW)
         //inicjalize som doata tu use
         var farmArrayList: List<Farm>? = null
@@ -262,6 +263,8 @@ class FarmActivity : AppCompatActivity() {
         back.setOnClickListener {
             val intent = Intent(this, MainMenu::class.java)
             startActivity(intent)
+            farm=null
+            finish()
         }
         val dell = findViewById<ImageButton>(R.id.dell_Button_AF)
         dell.setOnClickListener {
